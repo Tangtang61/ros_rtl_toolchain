@@ -1,0 +1,22 @@
+dnl This is the newlib/libc/sys configure.in file.
+dnl Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.59)
+AC_INIT([newlib],[NEWLIB_VERSION])
+AC_CONFIG_SRCDIR([crt0.S])
+
+dnl Can't be done in NEWLIB_CONFIGURE because that confuses automake. 
+dnl ### Set the relative path to the newlib top folder(newlib-2.5.0.20170922) to AC_CONFIG_AUX_DIR. 
+AC_CONFIG_AUX_DIR(../../../..)
+
+dnl ### Set the relative path to the newlib folder(newlib-2.5.0.20170922/newlib) to NEWLIB_CONFIGURE. 
+NEWLIB_CONFIGURE(../../..)
+
+dnl ### Set the target subdirectory of automake to AC_SUBST.
+dnl ##EXTRA_SUBDIRS="machine mcos_svc"
+dnl ##AC_SUBST(EXTRA_SUBDIRS)
+
+dnl ### Set the target subdirectory of automake to AC_SUBST.
+dnl ##AC_CONFIG_FILES([Makefile mcos_svc/Makefile])
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
